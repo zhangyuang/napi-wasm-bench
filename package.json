@@ -1,0 +1,15 @@
+{
+  "name": "wasm-demo",
+  "version": "1.0.0",
+  "description": "Benchmark comparison between WASM and N-API",
+  "main": "index.js",
+  "scripts": {
+    "build:wasm": "wasm-pack build --target nodejs --out-dir pkg-wasm --features wasm",
+    "build:napi": "cargo build --release --features napi",
+    "build": "npm run build:wasm && npm run build:napi",
+    "benchmark": "node benchmark.js"
+  },
+  "devDependencies": {
+    "benny": "^3.7.1"
+  }
+} 
